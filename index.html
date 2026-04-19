@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>RE,BAR | Analog Vanguard Experiences</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&family=Manrope:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#52473a",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary-container": "#ffa494",
+                        "on-primary": "#670500",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#3a3939",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-tint": "#ffb4a7",
+                        "on-secondary": "#392f22",
+                        "surface-variant": "#353534",
+                        "tertiary-container": "#4b4b4b",
+                        "background": "#131313",
+                        "inverse-surface": "#e5e2e1",
+                        "surface": "#131313",
+                        "primary": "#ffb4a7",
+                        "primary-fixed-dim": "#ffb4a7",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary-fixed-dim": "#d4c4b2",
+                        "secondary": "#d4c4b2",
+                        "on-error": "#690005",
+                        "on-secondary-container": "#c6b6a5",
+                        "secondary-fixed": "#f1e0cd",
+                        "outline": "#a88a84",
+                        "primary-container": "#941b0c",
+                        "surface-dim": "#131313",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "on-primary-fixed": "#400200",
+                        "on-background": "#e5e2e1",
+                        "on-surface-variant": "#e1bfb9",
+                        "on-tertiary-container": "#bdbbbb",
+                        "on-tertiary": "#303030",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#af2f1d",
+                        "on-secondary-fixed-variant": "#504538",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-fixed": "#ffdad4",
+                        "on-primary-fixed-variant": "#8d1507",
+                        "on-secondary-fixed": "#231a0f",
+                        "outline-variant": "#59413d",
+                        "tertiary": "#c8c6c6",
+                        "surface-container": "#201f1f",
+                        "surface-container-highest": "#353534",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-fixed": "#e4e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .grain-texture {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body
+    class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-white overflow-x-hidden">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-[24px] shadow-[0_16px_32px_rgba(229,226,225,0.06)] nav-bar">
+        <div class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto">
+            <div class="flex items-center gap-2 logo-container">
+                <a href="index.html" class="flex items-center gap-2">
+                    <img alt="RE,BAR logo" class="h-10 w-auto"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_UgxpWBl8fAb0cmbDFFExDmTwAyyMfJDDPJwj9vqqxA2JZofdgNr3I7j87E17OG-ueudvjRFubCLXPrQnstdvAgTTiP5JSTbw-9aEWibq2GgSmHiynthFRF3nGkySP5_BKkjfr2fiD4RAcor4F61kNnRRwRK-fY_SAwuCL9lJ41GHAlEGNoFfwJz2QN_nz3bDzzQ4wf8rtj2fNHwNfsAh5M5OsPxjzLK35er83_vbBl7EUjv0bMIiH5cdTVLlDMl_PnzM5J0R4fA" />
+                    <span
+                        class="text-2xl font-black tracking-tighter text-[#e5e2e1] font-headline uppercase">RE,BAR</span>
+                </a>
+            </div>
+            <div class="hidden md:flex gap-10 items-center nav-links">
+                <a class="font-headline tracking-tighter uppercase text-sm text-[#e5e2e1]/60 font-medium hover:text-[#af2f1d] transition-all duration-300 transform"
+                    href="index.html">Home</a>
+                <a class="font-headline tracking-tighter uppercase text-sm text-[#e5e2e1]/60 font-medium hover:text-[#af2f1d] transition-all duration-300 transform"
+                    href="menu.html">Menu</a>
+                <a class="font-headline tracking-tighter uppercase text-sm text-[#e5e2e1]/60 font-medium hover:text-[#af2f1d] transition-all duration-300 transform"
+                    href="gallery.html">Gallery</a>
+                <a class="font-headline tracking-tighter uppercase text-sm text-[#e5e2e1]/60 font-medium hover:text-[#af2f1d] transition-all duration-300 transform"
+                    href="reservations.html">Reservations</a>
+            </div>
+            <a href="reservations.html"
+                class="bg-primary-container text-on-surface font-headline uppercase text-sm px-6 py-3 rounded-lg hover:bg-inverse-primary transition-all duration-300 cta-btn">
+                Book a Table
+            </a>
+        </div>
+    </nav>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-screen min-h-[800px] flex items-center justify-start overflow-hidden hero-section">
+            <div class="absolute inset-0 z-0 hero-bg">
+                <div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent z-10">
+                </div>
+                <img alt="Moody Bar" class="w-full h-full object-cover parallax-img"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZVMFNn6r8-tysoUPKOUoDCN1HjcotY5zLuHAaKDDF7cN4ShwEkmH8aXkzCV6G4yv-Djd6s51DRraZPah_7ZUElhM-e5vau4hpgG6lUeMjvMYEuzmwaOxMyTIdpMJXKrs6DpaEmPJB4t6vJzdXUeBrgPywP3WYiPJJjZjCYdAisM1XlEhO9lEc-xaVZs9MK8EbHUkZjzPXWpITKrMXvYz89ZHxiTryOoXIna3cspY08cx6WcfyVJqNvB7Xxij2Q4wXXB0SmaEoRno" />
+                <div class="absolute inset-0 bg-primary-container/10 mix-blend-multiply z-0"></div>
+                <div class="absolute inset-0 grain-texture z-20 pointer-events-none"></div>
+            </div>
+            <div class="relative z-30 px-8 md:px-24 max-w-4xl hero-content">
+                <p class="font-label text-primary uppercase tracking-[0.3em] text-xs md:text-sm mb-4 hero-elem">ANALOG
+                    VANGUARD EXPERIENCES</p>
+                <h1
+                    class="font-headline text-5xl md:text-8xl font-black text-on-surface tracking-tighter leading-[0.9] mb-8 hero-elem">
+                    Analog Soul,<br />
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-inverse-primary">Modern
+                        Spirits.</span>
+                </h1>
+                <p class="font-body text-lg md:text-xl text-on-surface/70 max-w-lg mb-12 leading-relaxed hero-elem">
+                    A sanctuary for the nocturnal. Where the warmth of vinyl meets the precision of craft mixology.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 hero-elem">
+                    <a href="reservations.html"
+                        class="bg-primary-container text-on-surface font-headline font-bold uppercase py-5 px-10 rounded-md tracking-widest hover:bg-primary-fixed-dim transition-all group flex items-center justify-center gap-3 interactive-btn">
+                        Book a Table
+                        <span
+                            class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                    <a href="menu.html"
+                        class="bg-surface-container-highest/80 backdrop-blur-md text-on-surface font-headline font-bold uppercase py-5 px-10 text-center rounded-md tracking-widest hover:bg-surface-bright transition-all interactive-btn">
+                        The Menu
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- The Vibe Section (Asymmetric Editorial) -->
+        <section
+            class="py-32 px-8 md:px-24 bg-surface grid grid-cols-1 md:grid-cols-12 gap-16 items-center gsap-section">
+            <div class="md:col-span-5 relative scroll-image-container flex justify-center items-center">
+                <div
+                    class="aspect-square w-full max-w-sm bg-surface-container-low rounded-full overflow-hidden relative shadow-2xl border-4 border-surface-container-highest">
+                    <img alt="Vinyl Collection" class="w-full h-full object-cover vinyl-record-img interactive-img"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfsoVBQy77AlPy0hBf5VYfMnz3Sj4q7SFH2EzG1E34t3xaGuaAWSVEJy45RTo5ydsBqADNZHACvkJU6AeEqryvIsXg86Tacwa0p6ynQHEqL2hd0Yf6m_tRB2OMRvx6AH7eXl2u42bjgMkTvZl1moEs17rEofjqAF_aX80RMEKpRuLmfEfA-Jw3oOhMWhhSfDVgNJcjE3wyfHK0uRWe5wXjoJ0j6-o0LTq7lQGABSu3ri0B7JIBYIgLxeIjae_5Z_IP9oo3r6Bo6tg" />
+                    <!-- Inner record hole -->
+                    <div
+                        class="absolute inset-0 m-auto w-12 h-12 bg-background rounded-full border-2 border-surface-container-highest z-10 pointers-events-none">
+                    </div>
+                </div>
+                <div
+                    class="absolute -bottom-8 -right-8 w-48 h-48 bg-primary-container/20 rounded-full blur-3xl bounce-blob">
+                </div>
+            </div>
+            <div class="md:col-span-7 md:pl-16 scroll-text">
+                <h2 class="font-label text-primary-container text-sm font-bold uppercase tracking-widest mb-4">THE
+                    ATMOSPHERE</h2>
+                <h3 class="font-headline text-4xl md:text-6xl font-extrabold mb-8 tracking-tighter leading-none">
+                    Curation in Every Chord.</h3>
+                <p class="font-body text-lg text-on-surface/60 leading-relaxed mb-8 max-w-xl">
+                    We don't just play music; we curate experiences. From the tactile crackle of vintage jazz pressings
+                    to the architectural precision of our lighting, RE,BAR is an ode to the analog era, reimagined for
+                    the contemporary palate.
+                </p>
+                <div class="grid grid-cols-2 gap-8 border-t border-outline-variant/15 pt-8">
+                    <div>
+                        <span class="text-3xl font-headline font-black text-primary italic">01.</span>
+                        <h4 class="font-headline text-lg font-bold mt-2 uppercase">Sonic Fidelity</h4>
+                    </div>
+                    <div>
+                        <span class="text-3xl font-headline font-black text-primary italic">02.</span>
+                        <h4 class="font-headline text-lg font-bold mt-2 uppercase">Tactile Luxury</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Signature Cocktails (Bento Grid) -->
+        <section class="py-32 px-8 md:px-24 bg-surface-container-low gsap-section">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 scroll-text">
+                <div class="max-w-2xl">
+                    <h2 class="font-label text-primary-container text-sm font-bold uppercase tracking-widest mb-4">THE
+                        LAB</h2>
+                    <h3 class="font-headline text-4xl md:text-6xl font-extrabold tracking-tighter">Signature Spirits.
+                    </h3>
+                </div>
+                <a class="font-headline text-sm uppercase tracking-widest text-on-surface/40 hover:text-primary transition-colors pb-1 border-b border-outline-variant/15"
+                    href="menu.html">Explore Full Menu</a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-auto md:h-[800px]">
+                <!-- Main Featured Item -->
+                <div
+                    class="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-lg bg-surface-container-highest bento-item tilt-card cursor-pointer">
+                    <img alt="Blood Orange Sour" class="w-full h-full object-cover transition-transform duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA83VICXdeKOMN5ncyhVnl567RCljtMrRBWWqvsK6Zj6A4g1kRjA7xXQxzIEGpgz1iC_fYhPAiAiR9pQLG1hZ584uPUSJkpYifLVs18_8JX_8zInKmlhFx1Hzr_bt47g02mJNoySN50j4Y698p99fv_YGcx_hqWxFQVgZWhuUpGKpU71s5HKnqlVDnPMADo_ZWWgxTbzZAE1tFicb3uyaMVM-6LUlTIqD_GCCqbB2XzeOqBLW4vAuRTjFFVNkvxdMKEDwjF7kE6eRI" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full card-content">
+                        <span
+                            class="inline-block bg-primary-container text-on-surface text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-4 rounded-full">Bestseller</span>
+                        <h4 class="font-headline text-3xl font-bold mb-2">Crimson Vanguard</h4>
+                        <p class="font-body text-on-surface/60 text-sm">Rye, Blood Orange, Smoked Rosemary, Charcoal
+                            Infusion.</p>
+                        <div class="mt-4 text-2xl font-headline font-black text-primary">$18</div>
+                    </div>
+                </div>
+                <!-- Secondary Item -->
+                <div
+                    class="md:col-span-2 group relative overflow-hidden rounded-lg bg-surface-container-highest bento-item tilt-card cursor-pointer">
+                    <img alt="Smoked Old Fashioned" class="w-full h-full object-cover transition-transform duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFAqzF4scK52394kf9TGzMJpe6nWM2vgdQivwZca4sHKQC8kZkdq8j7pdQvGm1W852hFIjJI4HcjzNEZZMRXQttXM2zloUb4ZfgPZHa9V8P0GU-drJtrHUatFyGvKxgV9Q3SVWYyevOSf8ZtF32xFa8HXiGU0K4kHMEktkLVyAt3ZlTZeNZh_2NdaTEmaJAUZybnWTt-hXuSlG-NG5kLX1evrSfP4D6WvY4mYpajN8iDnZdutNs8nr9ro7NzlkK3pWQDHecg-gr1Q" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent group-hover:opacity-80 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-6 card-content">
+                        <h4 class="font-headline text-2xl font-bold mb-1">Analog Smoked</h4>
+                        <p class="font-body text-on-surface/60 text-xs">Small Batch Bourbon, Maple, Pecan Bitters, Cedar
+                            Smoke.</p>
+                    </div>
+                </div>
+                <!-- Small Grid Items -->
+                <div
+                    class="group relative overflow-hidden rounded-lg bg-surface-container-highest bento-item tilt-card cursor-pointer">
+                    <img alt="Gin Botanical" class="w-full h-full object-cover transition-transform duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd6qKS7HXVa_TX9PnYD9PEXpL9dF5OXh1wKcbKrKcXitAMIt1uadO1De6mNw_F74RipZacVPXwSCOFR-3YDE7L5HiIz1ef4zGM5M0-lrlBMNuMxPGqa9naHM0w_UWfhISt18wiBAohryRrqMWBgPtxeH_HfPHHXEpYfAQa7Japb9V6tMQlR2rb6T3buCkCVbbPL4Wi3l9EeAK_otcNd0QJacCfx06930ExJC9x7oxKf1fjTPrsMimWqZ-T_ENBBmZTDqEc1O9dYSc" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent group-hover:opacity-80 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-4 card-content">
+                        <h4 class="font-headline text-lg font-bold">Midnight Botanist</h4>
+                    </div>
+                </div>
+                <div
+                    class="group relative overflow-hidden rounded-lg bg-surface-container-highest bento-item tilt-card cursor-pointer">
+                    <img alt="Espresso Martini" class="w-full h-full object-cover transition-transform duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEUECa8DE7CinTmnuAtqE-9daah1rMysc6wRwLdcJU2ljpavkR_W5CFGWXLaU7IWiC4gtHh43mClOFxXYIUgcI8gB-EFtB5GMJ3U3ekEndwEI_83IKdZbSr3iggEe4amWjdmy2NKabCD4NzMxDtVZp4hmO19r788yNYI1VV7VtIRNufEeV5f4hJxwS8i6YPFDlbw-iuYvDd8geng5Il1nc4IIdT7eHfVFeTYiiLhdQ7LqNAiVmhBdw99INg7LrFQpu8pe3lRPohiI" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent group-hover:opacity-80 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-4 card-content">
+                        <h4 class="font-headline text-lg font-bold">Dark Roast Reverie</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Upcoming Events (Menu List Layout) -->
+        <section class="py-32 px-8 md:px-24 bg-surface gsap-section">
+            <div class="text-center mb-24 scroll-text">
+                <h2 class="font-label text-primary-container text-sm font-bold uppercase tracking-widest mb-4">THE
+                    CALENDAR</h2>
+                <h3 class="font-headline text-4xl md:text-7xl font-extrabold tracking-tighter">Nocturnal Happenings.
+                </h3>
+            </div>
+            <div class="max-w-4xl mx-auto space-y-16 list-container">
+                <!-- Event Item -->
+                <div
+                    class="flex flex-col md:flex-row justify-between items-start md:items-center group list-item hover:bg-surface-container-low p-6 rounded-lg transition-colors duration-300">
+                    <div class="mb-4 md:mb-0">
+                        <span class="font-label text-primary text-xs tracking-widest uppercase mb-2 block">Every
+                            Thursday / 8:00 PM</span>
+                        <h4
+                            class="font-headline text-3xl md:text-4xl font-bold group-hover:text-primary transition-colors cursor-default">
+                            Vinyl & Vermouth</h4>
+                        <p class="font-body text-on-surface/40 mt-2">Deep cuts from the vault. Guest DJs spinning
+                            strictly 45s.</p>
+                    </div>
+                    <div class="flex items-center gap-8">
+                        <div class="text-right">
+                            <span class="font-label text-[10px] uppercase tracking-widest opacity-40">Entry</span>
+                            <p class="font-headline font-bold text-xl uppercase">Free</p>
+                        </div>
+                        <button
+                            class="bg-surface-container-highest p-3 rounded-md group-hover:bg-primary-container transition-colors transform group-hover:scale-110 duration-300">
+                            <span class="material-symbols-outlined">confirmation_number</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Event Item -->
+                <div
+                    class="flex flex-col md:flex-row justify-between items-start md:items-center group list-item hover:bg-surface-container-low p-6 rounded-lg transition-colors duration-300">
+                    <div class="mb-4 md:mb-0">
+                        <span class="font-label text-primary text-xs tracking-widest uppercase mb-2 block">March 14 /
+                            9:30 PM</span>
+                        <h4
+                            class="font-headline text-3xl md:text-4xl font-bold group-hover:text-primary transition-colors cursor-default">
+                            The Red Lounge Sessions</h4>
+                        <p class="font-body text-on-surface/40 mt-2">Live Neo-Jazz Quartet. A night of experimental
+                            improvisation.</p>
+                    </div>
+                    <div class="flex items-center gap-8">
+                        <div class="text-right">
+                            <span class="font-label text-[10px] uppercase tracking-widest opacity-40">Tickets</span>
+                            <p class="font-headline font-bold text-xl uppercase">$25</p>
+                        </div>
+                        <button
+                            class="bg-surface-container-highest p-3 rounded-md group-hover:bg-primary-container transition-colors transform group-hover:scale-110 duration-300">
+                            <span class="material-symbols-outlined">confirmation_number</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Event Item -->
+                <div
+                    class="flex flex-col md:flex-row justify-between items-start md:items-center group list-item hover:bg-surface-container-low p-6 rounded-lg transition-colors duration-300">
+                    <div class="mb-4 md:mb-0">
+                        <span class="font-label text-primary text-xs tracking-widest uppercase mb-2 block">Monthly Last
+                            Saturday / All Day</span>
+                        <h4
+                            class="font-headline text-3xl md:text-4xl font-bold group-hover:text-primary transition-colors cursor-default">
+                            Analog Market</h4>
+                        <p class="font-body text-on-surface/40 mt-2">Curated selection of records, art, and vintage
+                            apparel.</p>
+                    </div>
+                    <div class="flex items-center gap-8">
+                        <div class="text-right">
+                            <span class="font-label text-[10px] uppercase tracking-widest opacity-40">Entry</span>
+                            <p class="font-headline font-bold text-xl uppercase">Open</p>
+                        </div>
+                        <button
+                            class="bg-surface-container-highest p-3 rounded-md group-hover:bg-primary-container transition-colors transform group-hover:scale-110 duration-300">
+                            <span class="material-symbols-outlined">confirmation_number</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Newsletter / CTA -->
+        <section class="py-24 px-8 bg-surface-container-lowest gsap-section">
+            <div
+                class="max-w-4xl mx-auto bg-surface-container-low rounded-xl p-12 relative overflow-hidden newsletter-box">
+                <div
+                    class="absolute top-0 right-0 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl -mr-32 -mt-32">
+                </div>
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <h3 class="font-headline text-3xl font-bold mb-4 tracking-tighter uppercase">Join the Vanguard.</h3>
+                    <p class="font-body text-on-surface/60 mb-8 max-w-md">Subscribe to our dispatch for secret menu
+                        drops and priority event access.</p>
+                    <form class="flex flex-col sm:flex-row w-full max-w-md gap-4">
+                        <input
+                            class="flex-grow bg-transparent border-b border-outline-variant focus:border-primary-container outline-none font-headline text-sm py-3 transition-colors placeholder:opacity-30"
+                            placeholder="YOUR EMAIL ADDRESS" type="email" />
+                        <button
+                            class="font-headline uppercase font-bold text-primary tracking-widest px-6 py-3 hover:text-on-surface hover:-translate-y-1 transition-all duration-300">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-[#1c1b1b] w-full py-12 px-8 border-t border-[#59413d]/15">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8 w-full max-w-[1440px] mx-auto">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <span class="text-xl font-bold text-[#e5e2e1] font-headline uppercase">RE,BAR</span>
+                <p class="font-manrope text-xs tracking-widest uppercase text-[#e5e2e1]/40">© 2024 RE,BAR. ANALOG
+                    VANGUARD.</p>
+            </div>
+            <div class="flex gap-8">
+                <a class="font-manrope text-xs tracking-widest uppercase text-[#e5e2e1]/40 hover:text-[#e5e2e1] hover:-translate-y-1 transition-all duration-300 block"
+                    href="#">Instagram</a>
+                <a class="font-manrope text-xs tracking-widest uppercase text-[#e5e2e1]/40 hover:text-[#e5e2e1] hover:-translate-y-1 transition-all duration-300 block"
+                    href="#">Facebook</a>
+                <a class="font-manrope text-xs tracking-widest uppercase text-[#e5e2e1]/40 hover:text-[#e5e2e1] hover:-translate-y-1 transition-all duration-300 block"
+                    href="#">Privacy</a>
+                <a class="font-manrope text-xs tracking-widest uppercase text-[#e5e2e1]/40 hover:text-[#e5e2e1] hover:-translate-y-1 transition-all duration-300 block"
+                    href="#">Contact</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[#941B0C] text-sm">location_on</span>
+                <span class="font-manrope text-xs tracking-widest uppercase text-[#e5e2e1]/60">124 Vanguard St. /
+                    NY</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Initial Hero Animation
+        const tl = gsap.timeline();
+        tl.from(".nav-bar", { y: -50, opacity: 0, duration: 1, ease: "power3.out" })
+            .from(".hero-elem", { y: 30, opacity: 0, duration: 0.8, stagger: 0.15, ease: "power2.out" }, "-=0.5");
+
+        // Parallax Effect for Hero Image
+        gsap.to(".parallax-img", {
+            yPercent: 20,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".hero-section",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+        // Fade-in sections
+        gsap.utils.toArray(".gsap-section").forEach(section => {
+            gsap.from(section, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                },
+                y: 40,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power2.out"
+            });
+        });
+
+        // Zoom-in image revelation
+        gsap.utils.toArray(".scroll-image-container").forEach(container => {
+            gsap.from(container, {
+                scrollTrigger: { trigger: container, start: "top 85%" },
+                scale: 0.95,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+        });
+
+        // Vinyl Record Spin on Scroll
+        gsap.to(".vinyl-record-img", {
+            rotation: 360 * 3, // Rotate multiple times
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".scroll-image-container",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1.5 // Link to scrolling speed directly with a slight smooth delay
+            }
+        });
+
+        // Bento Grid Stagger
+        gsap.from(".bento-item", {
+            scrollTrigger: { trigger: ".bento-item", start: "top 85%" },
+            y: 40,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: "power2.out"
+        });
+
+        // List Item Stagger
+        gsap.from(".list-item", {
+            scrollTrigger: { trigger: ".list-container", start: "top 85%" },
+            x: -30,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.15,
+            ease: "power2.out"
+        });
+
+        // Tilt Cards on Touch / Mouse Move
+        const tiltCards = document.querySelectorAll(".tilt-card");
+        tiltCards.forEach(card => {
+            const img = card.querySelector("img");
+            const content = card.querySelector(".card-content");
+
+            card.addEventListener("mousemove", (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const xPercent = (x / rect.width - 0.5) * 20; // 20deg max
+                const yPercent = (y / rect.height - 0.5) * -20;
+
+                gsap.to(card, {
+                    rotationY: xPercent,
+                    rotationX: yPercent,
+                    transformPerspective: 1000,
+                    duration: 0.5,
+                    ease: "power1.out"
+                });
+                gsap.to(img, { scale: 1.1, duration: 0.5 });
+                if (content) gsap.to(content, { z: 30, duration: 0.5 });
+            });
+
+            card.addEventListener("mouseleave", () => {
+                gsap.to(card, {
+                    rotationY: 0,
+                    rotationX: 0,
+                    duration: 0.5,
+                    ease: "power1.out"
+                });
+                gsap.to(img, { scale: 1, duration: 0.5 });
+                if (content) gsap.to(content, { z: 0, duration: 0.5 });
+            });
+        });
+    </script>
+</body>
+
+</html>

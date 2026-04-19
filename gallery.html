@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery | RE,BAR</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "secondary-container": "#52473a",
+                "surface-container-low": "#1c1b1b",
+                "on-primary-container": "#ffa494",
+                "on-primary": "#670500",
+                "on-error-container": "#ffdad6",
+                "surface-bright": "#3a3939",
+                "on-tertiary-fixed": "#1b1c1c",
+                "surface-tint": "#ffb4a7",
+                "on-secondary": "#392f22",
+                "surface-variant": "#353534",
+                "tertiary-container": "#4b4b4b",
+                "background": "#131313",
+                "inverse-surface": "#e5e2e1",
+                "surface": "#131313",
+                "primary": "#ffb4a7",
+                "primary-fixed-dim": "#ffb4a7",
+                "surface-container-lowest": "#0e0e0e",
+                "secondary-fixed-dim": "#d4c4b2",
+                "secondary": "#d4c4b2",
+                "on-error": "#690005",
+                "on-secondary-container": "#c6b6a5",
+                "secondary-fixed": "#f1e0cd",
+                "outline": "#a88a84",
+                "primary-container": "#941b0c",
+                "surface-dim": "#131313",
+                "error-container": "#93000a",
+                "inverse-on-surface": "#313030",
+                "tertiary-fixed-dim": "#c8c6c6",
+                "on-primary-fixed": "#400200",
+                "on-background": "#e5e2e1",
+                "on-surface-variant": "#e1bfb9",
+                "on-tertiary-container": "#bdbbbb",
+                "on-tertiary": "#303030",
+                "error": "#ffb4ab",
+                "inverse-primary": "#af2f1d",
+                "on-secondary-fixed-variant": "#504538",
+                "surface-container-high": "#2a2a2a",
+                "primary-fixed": "#ffdad4",
+                "on-primary-fixed-variant": "#8d1507",
+                "on-secondary-fixed": "#231a0f",
+                "outline-variant": "#59413d",
+                "tertiary": "#c8c6c6",
+                "surface-container": "#201f1f",
+                "surface-container-highest": "#353534",
+                "on-tertiary-fixed-variant": "#474747",
+                "on-surface": "#e5e2e1",
+                "tertiary-fixed": "#e4e2e1"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Epilogue"],
+                "body": ["Manrope"],
+                "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .grain-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .img-wrap { overflow: hidden; }
+        .parallax-zoom { transform: scale(1.1); transform-origin: center; }
+    </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-surface overflow-x-hidden">
+<!-- TopNavBar Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-[24px] shadow-[0_16px_32px_rgba(229,226,225,0.06)] nav-bar">
+<div class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto">
+<a href="index.html" class="text-2xl font-black tracking-tighter text-[#e5e2e1] font-headline uppercase">
+                RE,BAR
+</a>
+<div class="hidden md:flex gap-8 items-center nav-links">
+<a class="font-headline tracking-tighter uppercase text-sm md:text-base text-[#e5e2e1]/60 font-medium hover:text-[#af2f1d] transition-transform duration-300 hover:-translate-y-1" href="menu.html">Menu</a>
+<a class="font-headline tracking-tighter uppercase text-sm md:text-base text-[#941B0C] font-bold border-b border-[#941B0C]/30 pb-1 hover:text-[#af2f1d] transition-transform duration-300 hover:-translate-y-1" href="gallery.html">Gallery</a>
+<a class="font-headline tracking-tighter uppercase text-sm md:text-base text-[#e5e2e1]/60 font-medium hover:text-[#af2f1d] transition-transform duration-300 hover:-translate-y-1" href="reservations.html">Reservations</a>
+<a class="font-headline tracking-tighter uppercase text-sm md:text-base text-[#e5e2e1]/60 font-medium hover:text-[#af2f1d] transition-transform duration-300 hover:-translate-y-1" href="#">About</a>
+</div>
+<a href="reservations.html" class="bg-primary-container text-[#e5e2e1] px-6 py-2.5 rounded-md font-headline text-sm uppercase tracking-wider font-bold hover:bg-inverse-primary active:scale-95 transition-all duration-200 text-center inline-block">
+                Book a Table
+</a>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8 max-w-[1440px] mx-auto overflow-hidden">
+<!-- Hero Section: Editorial Header -->
+<header class="mb-24 relative header-section">
+<div class="flex flex-col gap-2 relative z-10 title-container">
+<span class="text-primary tracking-[0.3em] font-label text-[0.6875rem] uppercase mb-2">Visual Atmosphere</span>
+<h1 class="font-headline text-5xl md:text-7xl font-black tracking-tighter leading-[0.9] max-w-4xl">
+                    THE ANALOG <br/>
+<span class="text-primary-container">VANGUARD</span> GALLERY
+                </h1>
+</div>
+<div class="absolute -right-12 -top-12 opacity-10 select-none pointer-events-none hidden lg:block bg-text-anim">
+<span class="font-headline text-[12rem] font-black tracking-tighter text-on-surface">RE,BAR</span>
+</div>
+</header>
+<!-- Bento Grid Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 relative gallery-grid">
+<!-- Large Focus Image -->
+<div class="md:col-span-8 group relative rounded-md bg-surface-container-low aspect-[16/9] img-wrap gallery-item cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-end p-8">
+<p class="font-headline text-2xl font-bold tracking-tight transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">THE VELVET LOUNGE</p>
+</div>
+<img class="w-full h-full object-cover parallax-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJXZ1X-cOqV6jGvd7MFYmqO0CiaMRADHuFWEzj6gpnkjk5UaqrSKUHL5ltmnUpLuTxdQT-uc3DLDi2Zd5MqJqrJLpsJQ5kyIJ365WlZwwcZNq1XCLJvY4io6_unHegIp7EXDo06gU7PgogoIAqRRC3JOzsw1OP9h8j2-vFZILh-eStiMI24mUI5-czMgPjDiddzX6M9kEDHbDL2CPdwkiD9-2mlqMgAmrrGCTlP2Rrk_rZh__U3cZiCOic2aMcUoZ-IjaYUAF7knU"/>
+<div class="grain-overlay absolute inset-0"></div>
+</div>
+<!-- Vertical Tall Image -->
+<div class="md:col-span-4 group relative rounded-md bg-surface-container-low aspect-[3/4] img-wrap gallery-item cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-end p-8">
+<p class="font-headline text-2xl font-bold tracking-tight transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">SIGNATURE SMOKE</p>
+</div>
+<img class="w-full h-full object-cover parallax-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOA-Bla0d4izejJkz39pqg87AFINR8ymCQuHm5g0rHtpaGW2Hlz5P54Nwkxi6oenzW3vJQz7U4CJM2gfP3dTbjE539aZG28O52Gxyi4uILMN83_A-oWR4BCQfoxeE_YWw4sSvhbjtBT_BFdRXJOfi-vUTPym-YjJ2qO8gJtv0S4BJ9_SRRLh2M7qe7ay6U5U6fxMJGd3NQYGQxSH_xKobnEfnz9xdb-sTOc0kHLv_-ky2hSBnYHEqgMzkgn5noxGSHBIC1SH32XJs"/>
+<div class="grain-overlay absolute inset-0"></div>
+</div>
+<!-- Square Small Image -->
+<div class="md:col-span-4 group relative rounded-md bg-surface-container-low aspect-square img-wrap gallery-item cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-end p-8">
+<p class="font-headline text-lg font-bold tracking-tight transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">CURATED VINYL</p>
+</div>
+<img class="w-full h-full object-cover parallax-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6WQXUUNMkREqKyNUqCYaQXp4qVBfbvFzX-M47Pj8zNujcR2SUHTIRCt3dJlkCnmqi-Y-cIyEbVrzsZjunmX9jp5rOIS-UhsJ_ki071T7vq_BMvSwjw8QHhN14Bv3gYRWDC9b_gpHyoKLkMds1HOE9Pmdk1c6qR3jXv_x1vklMkiuK8JK39YNT_Z9PAxrQI9ilXN1B3KpuPAX-7foXagxQKz3akc5D9jbwgt58ZB9RghYHX8mAM_x27oBWOpwRF4Dagwwf3yyJ5qM"/>
+<div class="grain-overlay absolute inset-0"></div>
+</div>
+<!-- Wide Medium Image -->
+<div class="md:col-span-4 group relative rounded-md bg-surface-container-low aspect-square img-wrap gallery-item cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-end p-8">
+<p class="font-headline text-lg font-bold tracking-tight transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">COPPER & BRASS</p>
+</div>
+<img class="w-full h-full object-cover parallax-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPaWO9ncrn4FfaZpeXoQMaZ1QXRpGM7WznJX2Q-Bxwtvxw4XbFjan0nXw46rOwrKiwLGeYciMOUbS9ijT5WDJfIXU5ck5OECk-bPQEWvPLrsyI5l3rwxMk_7hQmYBRrsylOi3X-412JuA1xb3cx_oYT1xgDH-8hwaTNQ2r2j8SkK2L6CC4Yvl9txbfY7MWf0fPiTPMOjtWN-2YGheJJuimRSBn-EUf6GVKnLh09Z97_7tyXIje7OGzXglnaqLHGgDE_83gFWXYQ_0"/>
+<div class="grain-overlay absolute inset-0"></div>
+</div>
+<!-- Another Square Image -->
+<div class="md:col-span-4 group relative rounded-md bg-surface-container-low aspect-square img-wrap gallery-item cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-end p-8">
+<p class="font-headline text-lg font-bold tracking-tight transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">CRAFT MASTERY</p>
+</div>
+<img class="w-full h-full object-cover parallax-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA356Gj6cZg1fc-PX3auGGoHlVHRbtV32wXAnjULXDhKhJ_5r3yjEiTZgPEI65Sajt_key1039SCtaJhU49Op6Y4TUoesNZTciRSYrrRn_x30qmb5slsL3tVG4VW-xAF__vs2Uf72xkabd70Ur0kRmQP7wToLzPB8oHBOFP75YCqbtnVs5Q8TVX9cNXscFXLEhH91Hlgn6dWLx7Af-Vss54ojw07Fkt0Uv8rB-q6jYQrw8wfDLey4J_USB52U0dgaFsVO025TgnCa8"/>
+<div class="grain-overlay absolute inset-0"></div>
+</div>
+<!-- Full Width Statement Image -->
+<div class="md:col-span-12 group relative rounded-md bg-surface-container-low h-[400px] img-wrap gallery-item cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent z-10 flex items-center p-12">
+<div class="max-w-md bg-text-reveal">
+<span class="text-primary font-label text-xs uppercase tracking-widest mb-4 block">The Atmosphere</span>
+<h2 class="font-headline text-4xl font-black tracking-tighter mb-4 uppercase">ANALOG<br/>HEARTBEAT</h2>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">Experience the pulse of the city through our curated soundscape and dim-lit corners where time stands still.</p>
+</div>
+</div>
+<img class="w-full h-full object-cover parallax-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa9_SxPF0RyUZXFSbE27g2vrwCxXrO9tZQdpcOQ-H9a_eF0JQwYfeo2n4zbtW86GSg6vR45qMJQ9WKKDo4dty948TVPKZjpfPL2he2tFL_GoinqgC-7XCji5ZmBqwxaPOSO8_n2x6um5X1eMoNm7LwxQ6ddqhO3nEcF9aXn6qIeLkx9-pQlEnwhX77Wl9z4iXz3sZMablSSIts15mS97OJl8r-6IAZALASCNMmh9yT8Wy2Ri1H691ODq3hV0aLbgtgqhwumDiyLOw"/>
+<div class="grain-overlay absolute inset-0"></div>
+</div>
+</div>
+<!-- Secondary Gallery Section: Texture Focus -->
+<section class="mt-24 texture-section">
+<div class="flex items-center gap-8 mb-12">
+<h3 class="font-headline text-2xl font-extrabold uppercase tracking-tight whitespace-nowrap texture-title">Tactile Details</h3>
+<div class="h-[1px] w-full bg-outline-variant opacity-30 line-anim"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 tex-grid">
+<div class="aspect-square bg-surface-container rounded-md overflow-hidden group cursor-pointer img-wrap tex-item hover:-translate-y-2 transition-transform duration-300 shadow-xl">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqUYcVsBasjSZsjwbPxtLYwtKs0lH41rcrkgY6dKkMPj8UzlxW_zRKXly_XoKaM34ea8XJ6VGFk3sfI-y5Dk6NGvwrZNS0FvxJR-yx6RaVRlB-SqVsFRx1tpQrClEWoLLkUufo92Boodemx8XNxpodwguHAeKUxADBijM7z52JHaeTUZ8Z3ITP0dzdSFWxpinUdAesqJlUHiGge--MxUcWwamoCtJT2Fifpim2u2wLVimuL1rAZzWMZ_PXtxd-5BP68D8Ez8FPcvw"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-md overflow-hidden group cursor-pointer img-wrap tex-item hover:-translate-y-2 transition-transform duration-300 shadow-xl">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0ET74NVwdBA-kJ0-0pAXBa0atqiJkJur56jQOawIJxrVHNI6xr3KqT44PztxN8CuNsMaZY4hUlTC3_PTaAApB4npiZnbtHDcRuQdjMy16Eq3DJndI4TvuP0B21OwVPHRwtLcjzaP_RP7qDwxM3BoeseCbhLKHKNh7Z-Nuc_gQuCON1UL-5mgXo8yrSTVMf5Wu_T3z5wgwxuPfSoXc6e_5OQhdlYUEPNT4GK8nZ5yXcLBkn5APoLA29eJeflqHS2_AuCj8cITD_-8"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-md overflow-hidden group cursor-pointer img-wrap tex-item hover:-translate-y-2 transition-transform duration-300 shadow-xl">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfIVIZZrr5VYjFTmhaSulVajveODa2limekJX4134B6BLSwLCmlLnzWEi_emYsSIMHf4MzJ8aCW2O8zzxmRg0Yah8YFtJSfFoQB3s8o8XgKR334goOh2cOkfHc7Y1GmQhAKHthMxHDfvz9y5kgnTTjv0ZaLFng7pDMwvbkW1td3Fkups0oCC1sEnkdJarRhyPI7-xP_fHKN_CtzSlMmVyJRRoUmkh-CU7Gs_9VyJvefQXYJhZbabc6pHm-SBTumjatWy_ucXUmICY"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-md overflow-hidden group cursor-pointer img-wrap tex-item hover:-translate-y-2 transition-transform duration-300 shadow-xl">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN1NeDg0oDj8cfvpJMpW8dr_fOm-sxMsZ2xGdQIENvYvoBsQbghYFqax6X56FtW8EJMCWymlBlq7FylKvMEKsZQKd4RWsKxOT69BsZApwLmiAaY1sH3YU-V53Y6NUwLCTO_QG8NJ1ZGnCAKiRQDnOAjaK1eqIGqZq3HxBNaBUridXtPBkcZdms0bS01WRLVl_WQUs_6xPPCBw0zAtYITaKM24dNOqrcdKORgoE_xdkZl21HlqGg8K_pzoDy_L52l-C4jwg_lUUIsY"/>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="mt-24 p-12 bg-surface-container-low rounded-xl text-center relative overflow-hidden group cta-section">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/20 to-transparent swirl-bg"></div>
+<div class="relative z-10 text-elem">
+<h2 class="font-headline text-4xl font-black tracking-tighter mb-6 uppercase">Capture the Night</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto mb-10 font-body">Don't just watch from the sidelines. Step into the frame and experience the RE,BAR atmosphere for yourself.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a href="reservations.html" class="bg-primary-container text-on-surface px-8 py-4 rounded-md font-headline font-bold uppercase tracking-widest text-sm hover:scale-105 hover:shadow-[0_0_20px_#941b0c] transition-all active:scale-95 inline-block text-center">
+                        Reserve Your Seat
+</a>
+<button class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-md font-headline font-bold uppercase tracking-widest text-sm hover:bg-surface-bright transition-colors hover:-translate-y-1 transform">
+                        Follow @REBAR
+                    </button>
+</div>
+</div>
+<div class="grain-overlay absolute inset-0"></div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-[#1c1b1b] w-full py-12 px-8 border-t border-[#59413d]/15">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 w-full max-w-[1440px] mx-auto">
+<div class="flex flex-col gap-2 items-center md:items-start">
+<a href="index.html" class="text-xl font-bold text-[#e5e2e1] font-headline uppercase tracking-tighter">RE,BAR</a>
+<p class="font-manrope text-[10px] tracking-widest uppercase text-[#e5e2e1]/40">© 2024 RE,BAR. ANALOG VANGUARD.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-manrope text-xs tracking-widest uppercase text-[#e5e2e1]/40 hover:text-[#e5e2e1] hover:-translate-y-1 block transition-transform duration-300" href="#">Instagram</a>
+<a class="font-manrope text-xs tracking-widest uppercase text-[#e5e2e1]/40 hover:text-[#e5e2e1] hover:-translate-y-1 block transition-transform duration-300" href="#">Facebook</a>
+<a class="font-manrope text-xs tracking-widest uppercase text-[#e5e2e1]/40 hover:text-[#e5e2e1] hover:-translate-y-1 block transition-transform duration-300" href="#">Privacy</a>
+<a class="font-manrope text-xs tracking-widest uppercase text-[#e5e2e1]/40 hover:text-[#e5e2e1] hover:-translate-y-1 block transition-transform duration-300" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-2 text-[#941B0C]">
+<span class="material-symbols-outlined text-lg">local_bar</span>
+<span class="font-headline text-xs font-bold tracking-widest uppercase">Established 2024</span>
+</div>
+</div>
+</footer>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Initial load
+    gsap.from(".nav-bar", { y: -50, opacity: 0, duration: 1, ease: "power3.out" });
+    
+    gsap.from(".title-container h1, .title-container span", {
+        y: 40,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out"
+    });
+
+    gsap.from(".bg-text-anim", {
+        x: 100,
+        opacity: 0,
+        duration: 1.5,
+        delay: 0.5,
+        ease: "power2.out"
+    });
+
+    // Gallery Parallax effects and Reveal
+    const galleryItems = document.querySelectorAll(".gallery-item");
+    
+    galleryItems.forEach(item => {
+        // Reveal item
+        gsap.from(item, {
+            scrollTrigger: { trigger: item, start: "top 85%" },
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power2.out"
+        });
+
+        // Parallax image inside
+        const img = item.querySelector(".parallax-zoom");
+        if(img) {
+            gsap.to(img, {
+                yPercent: 15,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+        }
+    });
+
+    // Interaction inside Gallery items
+    galleryItems.forEach(card => {
+        const img = card.querySelector(".parallax-zoom");
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            
+            // Subtly pan image and card
+            gsap.to(img, {
+                x: x * 15,
+                y: y * 15,
+                scale: 1.15,
+                duration: 0.5,
+                ease: "power1.out"
+            });
+        });
+        card.addEventListener("mouseleave", () => {
+            gsap.to(img, {
+                x: 0,
+                y: 0,
+                scale: 1.1, // Reset to initial parallax scale
+                duration: 0.8,
+                ease: "power2.out"
+            });
+        });
+    });
+
+    // Texture section reveal
+    gsap.from(".texture-title", {
+        scrollTrigger: { trigger: ".texture-section", start: "top 80%" },
+        x: -30, opacity: 0, duration: 0.6, ease: "power2.out"
+    });
+    
+    gsap.from(".line-anim", {
+        scrollTrigger: { trigger: ".texture-section", start: "top 80%" },
+        scaleX: 0, transformOrigin: "left center", duration: 1, ease: "power2.inOut", delay: 0.3
+    });
+
+    gsap.from(".tex-item", {
+        scrollTrigger: { trigger: ".tex-grid", start: "top 85%" },
+        scale: 0.9, opacity: 0, duration: 0.5, stagger: 0.1, ease: "back.out(1.2)"
+    });
+
+    // CTA section
+    gsap.from(".cta-section .text-elem > *", {
+        scrollTrigger: { trigger: ".cta-section", start: "top 80%" },
+        y: 20, opacity: 0, duration: 0.6, stagger: 0.1, ease: "power2.out"
+    });
+</script>
+</body>
+</html>

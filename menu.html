@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Menu | RE,BAR</title>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;800;900&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#52473a",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary-container": "#ffa494",
+                        "on-primary": "#670500",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#3a3939",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-tint": "#ffb4a7",
+                        "on-secondary": "#392f22",
+                        "surface-variant": "#353534",
+                        "tertiary-container": "#4b4b4b",
+                        "background": "#131313",
+                        "inverse-surface": "#e5e2e1",
+                        "surface": "#131313",
+                        "primary": "#ffb4a7",
+                        "primary-fixed-dim": "#ffb4a7",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary-fixed-dim": "#d4c4b2",
+                        "secondary": "#d4c4b2",
+                        "on-error": "#690005",
+                        "on-secondary-container": "#c6b6a5",
+                        "secondary-fixed": "#f1e0cd",
+                        "outline": "#a88a84",
+                        "primary-container": "#941b0c",
+                        "surface-dim": "#131313",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "on-primary-fixed": "#400200",
+                        "on-background": "#e5e2e1",
+                        "on-surface-variant": "#e1bfb9",
+                        "on-tertiary-container": "#bdbbbb",
+                        "on-tertiary": "#303030",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#af2f1d",
+                        "on-secondary-fixed-variant": "#504538",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-fixed": "#ffdad4",
+                        "on-primary-fixed-variant": "#8d1507",
+                        "on-secondary-fixed": "#231a0f",
+                        "outline-variant": "#59413d",
+                        "tertiary": "#c8c6c6",
+                        "surface-container": "#201f1f",
+                        "surface-container-highest": "#353534",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-fixed": "#e4e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>.grain {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuD0EsyIqtCwHfnPX8Xoq-XUsRWijCGNi0JMnHAQ14OMknoKSxo1RLVz73f4XnayYdV0fzqD6clVOVAvEiybaUVx2QpvGNTbm4G7fKNrLc9u7XkzoURsV_RdYPrrNbTww9ApSTLwSyNOj2-RL_XUhcqPqRVJiy6YM_cB9g8Q8p-k85PILX9NzPbYRw5ShM_MMQ1J-IqO3zN3Km-1efK935UbvuQurup8FM0sMUlefIZHdDmLZhKzCc5gR7QwFx5f1wAK4EBOlQnn0uY);
+    opacity: 0.03
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-surface overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-[24px] shadow-[0_16px_32px_rgba(229,226,225,0.06)] nav-bar">
+<div class="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto">
+<a href="index.html" class="text-2xl font-black tracking-tighter text-[#e5e2e1] font-epilogue uppercase">RE,BAR</a>
+<div class="hidden md:flex items-center gap-8 nav-links">
+<a class="font-epilogue tracking-tighter uppercase text-sm md:text-base text-[#941B0C] font-bold border-b border-[#941B0C]/30 pb-1 hover:text-[#af2f1d] transition-all duration-300 hover:-translate-y-1" href="menu.html">Menu</a>
+<a class="font-epilogue tracking-tighter uppercase text-sm md:text-base text-[#e5e2e1]/60 font-medium hover:text-[#af2f1d] transition-all duration-300 hover:-translate-y-1" href="gallery.html">Gallery</a>
+<a class="font-epilogue tracking-tighter uppercase text-sm md:text-base text-[#e5e2e1]/60 font-medium hover:text-[#af2f1d] transition-all duration-300 hover:-translate-y-1" href="reservations.html">Reservations</a>
+<a class="font-epilogue tracking-tighter uppercase text-sm md:text-base text-[#e5e2e1]/60 font-medium hover:text-[#af2f1d] transition-all duration-300 hover:-translate-y-1" href="#">About</a>
+</div>
+<a href="reservations.html" class="bg-primary-container text-on-surface px-6 py-2 rounded-md font-label font-bold uppercase tracking-widest text-xs hover:bg-inverse-primary transition-all duration-300 transform active:scale-95 inline-block">
+                Book a Table
+</a>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-[614px] flex items-end pb-24 px-8 overflow-hidden bg-surface hero-section">
+<div class="absolute inset-0 z-0 hero-bg">
+<img class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-1000 parallax-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIQU__ZlbcY7IV4i_DzCydWRjZAmx6G4wOA0cuGm1-SIQ2hT49kWRMstUKdtLUtu76Q7JiIUWOkbFCAb3LJWRLVVlYAv0hiCtRFAjlHSaMY-Ou13CxYbMYUUmD6VIuzRxn1QHmthi1IMqVwTDk2yV1MU_Lf4hos8_rtZbQUn25I-4sisczx3r9v9hp4wl6gvhDoAFQONipNMXc-pu2vFUnC7TDB30zqzQkAG3ETzFPzPbjIxWI-DoNX8StX8cqu8A32EAfAZrmbbE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+<div class="absolute inset-0 grain"></div>
+</div>
+<div class="relative z-10 max-w-[1440px] mx-auto w-full hero-content">
+<span class="font-label text-xs uppercase tracking-[0.4em] text-primary mb-4 block hero-title">Analog Vanguard Selection</span>
+<h1 class="font-headline font-black text-6xl md:text-8xl tracking-tighter text-on-surface uppercase leading-none hero-title">RE<span class="text-[#941B0C]">,BAR</span></h1>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-8 py-24 space-y-32">
+<!-- Section: Signature Cocktails (Bento Style) -->
+<section class="gsap-section">
+<div class="flex flex-col md:flex-row justify-between items-baseline mb-16 gap-4">
+<h2 class="font-headline font-bold text-4xl tracking-tighter uppercase section-title">Signature Cocktails</h2>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">House-made infusions & forgotten classics</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[800px] bento-grid">
+<div class="md:col-span-8 group relative overflow-hidden bg-surface-container-low rounded-lg p-12 flex flex-col justify-end grid-item cursor-pointer touch-card">
+<img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 group-hover:opacity-60 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAymM-anmPDiZGPoBPVPis9FHgMZMLWByVJ91hjVZFRzTNqoW7RdSu5i8vGSiuoj4TZown2DtkvDt5xwnVTEVkh3HaVPV4lMJLzSJ_hyll5I6MgcGucLNZadWUxI4fgWwCeOyWoLENaKLVtO4lwXhWk5N4Efsy-jdWV62EicvJb5lfRrmOR1o46W98H8ZF079kZfM6rcKo--qwmNyej-ovrHQN_DV4Z4RmxRkIE_kOISDIHHg-yau2paXa1EGPgZj1JMmFb9BkbVVc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent opacity-80"></div>
+<div class="relative z-10 card-info">
+<span class="text-primary-container font-black text-5xl mb-4 block">01</span>
+<h3 class="font-headline font-bold text-3xl mb-2">NEGRONI ROUGE</h3>
+<p class="font-body text-on-surface-variant max-w-md text-lg leading-relaxed mb-6">Aged gin, bitter aperitivo, fortified berry wine, and a dash of house-smoked bitters.</p>
+<span class="font-headline font-bold text-2xl text-primary">$18</span>
+</div>
+</div>
+<div class="md:col-span-4 grid grid-rows-2 gap-6">
+<div class="bg-surface-container-highest rounded-lg p-8 flex flex-col justify-center border-l-4 border-primary-container grid-item hover:bg-surface-container-high transition-colors touch-card">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline font-bold text-xl uppercase tracking-tight">Velvet Midnight</h3>
+<span class="font-headline font-bold text-primary">$16</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant mb-4">Espresso infusion, vodka, dark cocoa nibs, and salted vanilla foam.</p>
+<span class="font-label text-[10px] uppercase tracking-widest bg-primary-container/20 text-primary w-fit px-2 py-1 rounded">Intense</span>
+</div>
+<div class="bg-surface-container-low rounded-lg overflow-hidden group relative grid-item cursor-pointer touch-card">
+<img class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 group-hover:opacity-70 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCutLK53AEG7zBVqRa0hLr7TEUz809ki-J9UevBrKmOKFrRk42AdrcyY3YZ_9t6jes3o1FPiRxhyJegXsxEwwqgfaT_Ni3Q-wVH_pyya0dpn7mX02jbkxGlWm2FIzOakmdM_rDMfPkcvtEdMek0-s5s1j0dwOxiKHh2JSi9_8301ZsYU11Dhcs8TrwLeQAJ6LhDMJl-1UOJRa9vA9Wx531dvgwJfN2hIoxx7NMIKHxd_YLye02sk_JME4OLYF1YftCIeN_hjXD7z5I"/>
+<div class="absolute inset-0 bg-surface-container-low/40"></div>
+<div class="relative p-8 h-full flex flex-col justify-end card-info">
+<h3 class="font-headline font-bold text-xl uppercase tracking-tight text-on-surface">Citrus Vanguard</h3>
+<p class="font-headline font-bold text-primary">$15</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Small Plates & Mains (Asymmetric Editorial Layout) -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-24 gsap-section">
+<!-- Small Plates -->
+<div class="space-y-16 list-column">
+<div class="border-l-2 border-primary-container pl-8">
+<h2 class="font-headline font-bold text-5xl tracking-tighter uppercase mb-2">Small Plates</h2>
+<p class="font-label text-sm uppercase tracking-widest text-on-surface-variant">To be shared, or not.</p>
+</div>
+<div class="space-y-12 list-items">
+<div class="group cursor-pointer hover-slide">
+<div class="flex justify-between items-baseline gap-4 mb-2">
+<h4 class="font-headline text-2xl group-hover:text-primary transition-colors duration-300">Truffle Arancini</h4>
+<div class="flex-grow h-[1px] bg-outline-variant/30 hidden md:block group-hover:bg-primary/50 transition-colors"></div>
+<span class="font-headline font-bold text-xl text-primary">$14</span>
+</div>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed max-w-md">Wild mushroom risotto, black truffle oil, and aged parmesan with a saffron aioli dip.</p>
+</div>
+<div class="group cursor-pointer hover-slide">
+<div class="flex justify-between items-baseline gap-4 mb-2">
+<h4 class="font-headline text-2xl group-hover:text-primary transition-colors duration-300">Burrata & Heirloom</h4>
+<div class="flex-grow h-[1px] bg-outline-variant/30 hidden md:block group-hover:bg-primary/50 transition-colors"></div>
+<span class="font-headline font-bold text-xl text-primary">$18</span>
+</div>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed max-w-md">Creamy burrata, balsamic reduction, toasted pine nuts, and garden fresh heirloom tomatoes.</p>
+</div>
+<div class="group cursor-pointer hover-slide">
+<div class="flex justify-between items-baseline gap-4 mb-2">
+<h4 class="font-headline text-2xl group-hover:text-primary transition-colors duration-300">Smoked Octopus</h4>
+<div class="flex-grow h-[1px] bg-outline-variant/30 hidden md:block group-hover:bg-primary/50 transition-colors"></div>
+<span class="font-headline font-bold text-xl text-primary">$21</span>
+</div>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed max-w-md">Charred octopus tentacle, chorizo oil, potato foam, and pimentón de la vera.</p>
+</div>
+</div>
+</div>
+<!-- Mains -->
+<div class="relative list-column">
+<div class="lg:sticky lg:top-32 space-y-16">
+<div class="lg:text-right border-l-2 lg:border-l-0 lg:border-r-2 border-primary-container pl-8 lg:pl-0 lg:pr-8">
+<h2 class="font-headline font-bold text-5xl tracking-tighter uppercase mb-2">Mains</h2>
+<p class="font-label text-sm uppercase tracking-widest text-on-surface-variant">The focal point.</p>
+</div>
+<div class="space-y-12 list-items">
+<div class="group flex flex-col lg:items-end lg:text-right hover-slide-right cursor-pointer">
+<div class="flex flex-col lg:flex-row-reverse justify-between items-baseline w-full gap-4 mb-2">
+<h4 class="font-headline text-2xl group-hover:text-primary transition-colors duration-300">Wagyu Ribeye</h4>
+<div class="flex-grow h-[1px] bg-outline-variant/30 hidden md:block group-hover:bg-primary/50 transition-colors"></div>
+<span class="font-headline font-bold text-xl text-primary">$58</span>
+</div>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed max-w-md">250g Australian Wagyu, charred asparagus, bone marrow jus, and smoked salt.</p>
+</div>
+<div class="group flex flex-col lg:items-end lg:text-right hover-slide-right cursor-pointer">
+<div class="flex flex-col lg:flex-row-reverse justify-between items-baseline w-full gap-4 mb-2">
+<h4 class="font-headline text-2xl group-hover:text-primary transition-colors duration-300">Pan-Seared Scallops</h4>
+<div class="flex-grow h-[1px] bg-outline-variant/30 hidden md:block group-hover:bg-primary/50 transition-colors"></div>
+<span class="font-headline font-bold text-xl text-primary">$34</span>
+</div>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed max-w-md">Hokkaido scallops, cauliflower purée, crispy pancetta, and green pea emulsion.</p>
+</div>
+<div class="mt-8 perspective-container group">
+<img class="w-full h-64 object-cover rounded-lg grayscale group-hover:grayscale-0 transition-all duration-700 shadow-2xl tilt-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCdDfgdVxiBDBMXQuxTYzj6BPDHkSm306vknvGdhuhhxvpA0aL4o-XPEyzKdXuF7a5mjtPb-rLYtL0691UD8t0XPJcnde9WH2Yj13upx6dGTb1TJvkXxt52aGgWuc-he9d6ZI2BVgv-JCMNHfQMckWZHwiHJN7SJtmEcOE8Y65NQ23TsdCaEdCpdX7hAm-oE_IzCHjvja4cH8fV3TdnsqQ-jtZzfCCyMBY_fvLEG0eISepEEvEbrhYiubBiJH4zmdkzeMbs9My1nM"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Craft Beers (Asymmetric List with Icons) -->
+<section class="bg-surface-container-low p-12 md:p-24 rounded-lg relative overflow-hidden gsap-section beer-section">
+<div class="absolute top-0 right-0 p-8 opacity-10 float-icon">
+<span class="material-symbols-outlined text-[200px]" style='font-variation-settings: "FILL" 1;'>sports_bar</span>
+</div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-16">
+<div>
+<h2 class="font-headline font-black text-6xl tracking-tighter uppercase text-primary mb-6">Craft Beers</h2>
+<p class="font-body text-lg text-on-surface-variant">Selected from the finest independent breweries. Seasonal and small-batch rotations only.</p>
+</div>
+<div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 beer-grid">
+<div class="flex gap-6 items-start beer-item group cursor-pointer">
+<span class="font-label text-xs text-primary-container font-black py-1 px-3 bg-primary-container/10 rounded-full h-fit mt-1 group-hover:bg-primary-container group-hover:text-white transition-colors duration-300">IP</span>
+<div>
+<h5 class="font-headline font-bold text-xl mb-1 group-hover:text-primary transition-colors">Neon Sunsets IPA</h5>
+<p class="text-xs font-label text-on-surface-variant uppercase mb-3 tracking-widest">6.8% ABV — 50 IBU</p>
+<p class="font-body text-sm text-on-surface-variant">A tropical explosion of pineapple and mango with a soft, hazy finish.</p>
+<span class="font-headline font-bold text-lg inline-block mt-2 text-primary">$9</span>
+</div>
+</div>
+<div class="flex gap-6 items-start beer-item group cursor-pointer">
+<span class="font-label text-xs text-primary-container font-black py-1 px-3 bg-primary-container/10 rounded-full h-fit mt-1 group-hover:bg-primary-container group-hover:text-white transition-colors duration-300">ST</span>
+<div>
+<h5 class="font-headline font-bold text-xl mb-1 group-hover:text-primary transition-colors">Vanguard Imperial Stout</h5>
+<p class="text-xs font-label text-on-surface-variant uppercase mb-3 tracking-widest">10.2% ABV — 65 IBU</p>
+<p class="font-body text-sm text-on-surface-variant">Notes of dark chocolate, roasted espresso, and a hint of vanilla bourbon.</p>
+<span class="font-headline font-bold text-lg inline-block mt-2 text-primary">$12</span>
+</div>
+</div>
+<div class="flex gap-6 items-start beer-item group cursor-pointer">
+<span class="font-label text-xs text-primary-container font-black py-1 px-3 bg-primary-container/10 rounded-full h-fit mt-1 group-hover:bg-primary-container group-hover:text-white transition-colors duration-300">PI</span>
+<div>
+<h5 class="font-headline font-bold text-xl mb-1 group-hover:text-primary transition-colors">Old World Pilsner</h5>
+<p class="text-xs font-label text-on-surface-variant uppercase mb-3 tracking-widest">4.8% ABV — 25 IBU</p>
+<p class="font-body text-sm text-on-surface-variant">Crisp, clean, and perfectly carbonated with a subtle floral aroma.</p>
+<span class="font-headline font-bold text-lg inline-block mt-2 text-primary">$8</span>
+</div>
+</div>
+<div class="flex gap-6 items-start beer-item group cursor-pointer">
+<span class="font-label text-xs text-primary-container font-black py-1 px-3 bg-primary-container/10 rounded-full h-fit mt-1 group-hover:bg-primary-container group-hover:text-white transition-colors duration-300">SA</span>
+<div>
+<h5 class="font-headline font-bold text-xl mb-1 group-hover:text-primary transition-colors">Wild Berry Sour</h5>
+<p class="text-xs font-label text-on-surface-variant uppercase mb-3 tracking-widest">5.4% ABV — 10 IBU</p>
+<p class="font-body text-sm text-on-surface-variant">Tart raspberry and blackberry blend with a sharp, refreshing tartness.</p>
+<span class="font-headline font-bold text-lg inline-block mt-2 text-primary">$10</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1c1b1b] w-full py-12 px-8 border-t border-[#59413d]/15">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 w-full max-w-[1440px] mx-auto">
+<a href="index.html" class="text-xl font-bold text-[#e5e2e1] font-epilogue uppercase">RE,BAR</a>
+<div class="flex gap-8">
+<a class="font-manrope text-xs tracking-widest uppercase text-[#e5e2e1]/40 hover:text-[#e5e2e1] transition-transform hover:-translate-y-1 block duration-300" href="#">Instagram</a>
+<a class="font-manrope text-xs tracking-widest uppercase text-[#e5e2e1]/40 hover:text-[#e5e2e1] transition-transform hover:-translate-y-1 block duration-300" href="#">Facebook</a>
+<a class="font-manrope text-xs tracking-widest uppercase text-[#e5e2e1]/40 hover:text-[#e5e2e1] transition-transform hover:-translate-y-1 block duration-300" href="#">Privacy</a>
+<a class="font-manrope text-xs tracking-widest uppercase text-[#e5e2e1]/40 hover:text-[#e5e2e1] transition-transform hover:-translate-y-1 block duration-300" href="#">Contact</a>
+</div>
+<div class="font-manrope text-xs tracking-widest uppercase text-[#e5e2e1]/40">
+                © 2024 RE,BAR. ANALOG VANGUARD.
+            </div>
+</div>
+</footer>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Initial Navbar Animation
+    gsap.from(".nav-bar", { y: -50, opacity: 0, duration: 1, ease: "power3.out" });
+
+    // Hero Animation
+    gsap.from(".hero-title", { 
+        y: 40, 
+        opacity: 0, 
+        duration: 1, 
+        stagger: 0.2, 
+        ease: "power3.out",
+        delay: 0.3
+    });
+
+    // Parallax
+    gsap.to(".parallax-img", {
+        yPercent: 20,
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".hero-section",
+            start: "top top",
+            end: "bottom top",
+            scrub: true
+        }
+    });
+
+    // Sections fade up
+    gsap.utils.toArray(".gsap-section").forEach(section => {
+        gsap.from(section, {
+            scrollTrigger: {
+                trigger: section,
+                start: "top 85%"
+            },
+            y: 40,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power2.out"
+        });
+    });
+
+    // Bento Grid Reveal stagger
+    gsap.from(".grid-item", {
+        scrollTrigger: { trigger: ".bento-grid", start: "top 80%" },
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.15,
+        ease: "power2.out"
+    });
+
+    // List animation for Menu Items
+    gsap.utils.toArray(".list-column").forEach(list => {
+        gsap.from(list.querySelectorAll(".hover-slide, .hover-slide-right"), {
+            scrollTrigger: { trigger: list, start: "top 80%" },
+            x: (i, el) => el.classList.contains("hover-slide-right") ? 40 : -40,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: "power2.out"
+        });
+    });
+    
+    // Beer Grid stagger
+    gsap.from(".beer-item", {
+        scrollTrigger: { trigger: ".beer-section", start: "top 80%" },
+        scale: 0.95,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: "back.out(1.2)"
+    });
+
+    // Floating beer icon Background
+    gsap.to(".float-icon", {
+        y: -40,
+        rotation: 10,
+        ease: "sine.inOut",
+        duration: 4,
+        yoyo: true,
+        repeat: -1
+    });
+
+    // Tilt interactions for cards (touch/mouse responsive)
+    const touchCards = document.querySelectorAll(".touch-card");
+    touchCards.forEach(card => {
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            
+            gsap.to(card, {
+                rotationY: 15 * x,
+                rotationX: -15 * y,
+                transformPerspective: 1000,
+                duration: 0.4,
+                ease: "power1.out"
+            });
+        });
+        card.addEventListener("mouseleave", () => {
+            gsap.to(card, {
+                rotationY: 0,
+                rotationX: 0,
+                duration: 0.5,
+                ease: "power2.out"
+            });
+        });
+    });
+    
+    // Interactive hover items for menu
+    document.querySelectorAll(".hover-slide").forEach(item => {
+        item.addEventListener("mouseenter", () => {
+            gsap.to(item, { x: 10, duration: 0.3, ease: "power2.out" });
+        });
+        item.addEventListener("mouseleave", () => {
+            gsap.to(item, { x: 0, duration: 0.3, ease: "power2.out" });
+        });
+    });
+    
+    document.querySelectorAll(".hover-slide-right").forEach(item => {
+        item.addEventListener("mouseenter", () => {
+             // on desktop (lg breakpoint), we might want hover to push left instead of right if text aligns right
+             gsap.to(item, { x: window.innerWidth >= 1024 ? -10 : 10, duration: 0.3, ease: "power2.out" });
+        });
+        item.addEventListener("mouseleave", () => {
+            gsap.to(item, { x: 0, duration: 0.3, ease: "power2.out" });
+        });
+    });
+
+</script>
+</body>
+</html>
